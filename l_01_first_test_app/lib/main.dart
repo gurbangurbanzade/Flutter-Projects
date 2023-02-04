@@ -9,16 +9,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.yellow,
         appBar: AppBar(
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.teal,
           title: const Text(
             "Header",
           ),
         ),
-        body: const Text(
-          'Hello Kanan',
-          style: TextStyle(
-              color: Colors.green, fontSize: 24, fontWeight: FontWeight.w600),
+        body: Container(
+          alignment: Alignment.center,
+          color: Colors.purple,
+          // width: 200,
+          // height: 300,
+          // child: Text(
+          //   "gurban",
+          //   textAlign: TextAlign.center,
+          // ),
+          constraints: BoxConstraints(maxHeight: 300, maxWidth: 300),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {debugPrint("clicked succesfull")},
