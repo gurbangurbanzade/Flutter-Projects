@@ -16,16 +16,23 @@ class MyApp extends StatelessWidget {
             "Header",
           ),
         ),
-        body: Container(
-          color: Colors.purple,
-          width: 200,
-          height: 300,
-          child: Text(
-            "gurban",
+        body: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.red,
+            child: Container(
+              width: 50,
+              height: 50,
+              margin: EdgeInsets.all(40),
+              color: Colors.blue,
+              alignment: Alignment.center,
+              child: Text("Gurban"),
+            ),
+            // padding: EdgeInsets.fromLTRB(30, 40, 30, 50),
+            // margin: EdgeInsets.fromLTRB(90, 40, 50, 80),
+            // constraints: BoxConstraints(maxHeight: 300, maxWidth: 300),
           ),
-          padding: EdgeInsets.fromLTRB(30, 40, 30, 50),
-          margin: EdgeInsets.fromLTRB(90, 40, 50, 80),
-          constraints: BoxConstraints(maxHeight: 300, maxWidth: 300),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {debugPrint("clicked succesfull")},
