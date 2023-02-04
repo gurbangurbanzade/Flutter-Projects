@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Container(
-          alignment: Alignment.center,
           color: Colors.purple,
-          // width: 200,
-          // height: 300,
-          // child: Text(
-          //   "gurban",
-          //   textAlign: TextAlign.center,
-          // ),
+          width: 200,
+          height: 300,
+          child: Text(
+            "gurban",
+          ),
+          padding: EdgeInsets.fromLTRB(30, 40, 30, 50),
+          margin: EdgeInsets.fromLTRB(90, 40, 50, 80),
           constraints: BoxConstraints(maxHeight: 300, maxWidth: 300),
         ),
         floatingActionButton: FloatingActionButton(
