@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,32 +20,114 @@ class MyApp extends StatelessWidget {
         ),
         body: Container(
           color: Colors.red,
-          height: 400,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.green,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisSize: MainAxisSize.min,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.green,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "D",
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.green,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "A",
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.green,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "R",
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.green,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "T",
+                    ),
+                  )
+                ],
               ),
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.yellow,
-              ),
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.blue,
-              ),
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.teal,
-              )
+              Container(
+                  child: Expanded(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                        child: Container(
+                      width: 100,
+                      color: Colors.yellow,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "E",
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      color: Colors.yellow,
+                      child: Text(
+                        "E",
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      color: Colors.yellow,
+                      child: Text(
+                        "E",
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      color: Colors.yellow,
+                      child: Text(
+                        "E",
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      color: Colors.yellow,
+                      child: Text(
+                        "E",
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      color: Colors.yellow,
+                      child: Text(
+                        "E",
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      color: Colors.yellow,
+                      child: Text(
+                        "E",
+                      ),
+                    ))
+                  ],
+                ),
+              ))
             ],
           ),
         ),
@@ -55,6 +139,41 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.red,
         ),
+      ),
+    );
+  }
+
+// Row column example
+  Container RowColumnExample() {
+    return Container(
+      color: Colors.red,
+      height: 400,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Icon(
+            Icons.add_circle,
+            size: 64,
+            color: Colors.green,
+          ),
+          Icon(
+            Icons.add_circle,
+            size: 64,
+            color: Colors.yellow,
+          ),
+          Icon(
+            Icons.add_circle,
+            size: 64,
+            color: Colors.blue,
+          ),
+          Icon(
+            Icons.add_circle,
+            size: 64,
+            color: Colors.teal,
+          )
+        ],
       ),
     );
   }
