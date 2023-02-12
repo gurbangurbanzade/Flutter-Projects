@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:l_02_widgets/02-imageWidgets.dart';
+import 'package:l_02_widgets/03-buttonExample.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,14 +15,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Image Examle"),
+          title: Text("Button Examle"),
         ),
-        body: ImageExample(),
+        body: ButtonExample(),
       ),
     );
   }
 }
 
+void name() {
+  print("salamlar");
+  debugPrint("salamalar");
+}
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key});
 

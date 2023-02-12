@@ -44,5 +44,7 @@ class _MyCounterState extends State<MyCounter> {
   void addCount() {
     setState(() {});
     _count++;
+    debugPrint("salam");
+    print("object");
   }
 }
