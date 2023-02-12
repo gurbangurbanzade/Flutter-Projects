@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:l_02_widgets/04-dropdownButton.dart';
+import 'package:l_02_widgets/05-popUpButton.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,16 +17,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Button Examle"),
         ),
-        body: DropDownButton(),
+        body: PopUpButton(),
       ),
     );
   }
 }
 
-void name() {
-  print("salamlar");
-  debugPrint("salamalar");
-}
+
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key});
 
