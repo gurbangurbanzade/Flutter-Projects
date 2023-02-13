@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Button Examle"),
+          actions: [PopUpButton()],
         ),
         body: PopUpButton(),
       ),
