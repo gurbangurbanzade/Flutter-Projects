@@ -18,7 +18,8 @@ class _constellationDetailState extends State<constellationDetail> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    appBarFindColor();
+    // appBarFindColor();
+    WidgetsBinding.instance.addPostFrameCallback((_) => appBarFindColor());
   }
 
   @override
