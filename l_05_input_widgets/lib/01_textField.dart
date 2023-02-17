@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
 
-class TextFieldExample extends StatelessWidget {
+class TextFieldExample extends StatefulWidget {
   const TextFieldExample({super.key});
+
+  @override
+  State<TextFieldExample> createState() => _TextFieldExampleState();
+}
+
+class _TextFieldExampleState extends State<TextFieldExample> {
+  late TextEditingController _emailController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+    _emailController = TextEditingController(text: "gurban@mail.com");
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _emailController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +39,10 @@ class TextFieldExample extends StatelessWidget {
               child: TextField(
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.next,
+                controller: _emailController,
                 autofocus: true,
                 // maxLines: 5,
-                maxLength: 6,
+                maxLength: 10,
                 cursorColor: Colors.pink,
                 decoration: InputDecoration(
                     labelText: "label input",
@@ -42,8 +66,16 @@ class TextFieldExample extends StatelessWidget {
                 textInputAction: TextInputAction.next,
               ),
             ),
-            Text("")
+            Text(_emailController.text),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _emailController.text = "gurban@gmail.com";
+            });
+          },
+          child: Icon(Icons.edit),
         ));
   }
 }
