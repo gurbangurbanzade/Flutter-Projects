@@ -9,6 +9,8 @@ class TextFormFieldExample extends StatefulWidget {
 }
 
 class _TextFormFieldExampleState extends State<TextFormFieldExample> {
+  String _email = "", _password = "", _name = "";
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,8 @@ class _TextFormFieldExampleState extends State<TextFormFieldExample> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Form(
-            autovalidateMode: AutovalidateMode.always,
+            key: _formKey,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               children: [
                 TextFormField(
@@ -33,6 +36,9 @@ class _TextFormFieldExampleState extends State<TextFormFieldExample> {
                       return "xarakter sayi azdir";
                     } else
                       return null;
+                  },
+                  onSaved: (newValue) {
+                    _name = newValue!;
                   },
                 ),
                 SizedBox(
@@ -51,7 +57,49 @@ class _TextFormFieldExampleState extends State<TextFormFieldExample> {
                     } else
                       return null;
                   },
+                  onSaved: (newValue) {
+                    _email = newValue!;
+                  },
                 ),
+                SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  // initialValue: "gurban@mail.com",
+                  keyboardType: TextInputType.name,
+                  decoration: InputDecoration(
+                      labelText: "password",
+                      hintText: "password",
+                      border: OutlineInputBorder()),
+                  validator: (value) {
+                    if (value!.length < 5) {
+                      return "password duz deyil";
+                    } else
+                      return null;
+                  },
+                  onSaved: (newValue) {
+                    _password = newValue!;
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      bool _validate = _formKey.currentState!.validate();
+                      if (_validate) {
+                        _formKey.currentState!.save();
+                        String result = "name $_name";
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(result),
+                          ),
+                        );
+                        _formKey.currentState!.reset();
+                      }
+                    },
+                    child: Text("Submit"))
               ],
             ),
           ),
