@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:l_06_http_json_api/model/users_model.dart';
 
 class LocalJson extends StatefulWidget {
   const LocalJson({super.key});
@@ -25,10 +26,16 @@ class _LocalJsonState extends State<LocalJson> {
     String data = await DefaultAssetBundle.of(context)
         .loadString("assets/data/cars.json");
 
-    // var jsonObject = jsonDecode(data);
-    // List carList = jsonObject;
-    List carList = jsonDecode(data);
+    var jsonObject = jsonDecode(data);
 
-    print(carList);
+    // List carList = jsonObject;
+
+    // carList.forEach((e) => {print(e.toString())});
+
+    // print(carList[0]["name"]);
+
+    List<Users> allUsers =
+        (jsonObject as List).map((user) => Users.fromJson(user)).toList();
+    debugPrint(allUsers.length.toString());
   }
 }
