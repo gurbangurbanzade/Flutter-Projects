@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.l_09_drum_machine_app">
+    package="com.gurbanGurbanzada.l_09_drum_machine_app">
    <application
-        android:label="l_09_drum_machine_app"
+        android:label="Drum Machine"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
